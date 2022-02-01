@@ -1,6 +1,12 @@
 {{config(materialized='table')}}
 
 /*
+
+This table joins the raw time series data on geographical fields and keeps to location_id generated in the 
+"locations" model. Thus, it can allow us to get the original data by joining
+
+"locations" with "cases_with_time" on the field location_id
+
 select date, total_cases, total_active_cases, new_cases, new_recovered, total_deaths, location_id
 from "FIVETRAN_INTERVIEW_DB"."GOOGLE_SHEETS"."COVID_19_INDONESIA_TANMAY_KULKARNI" as R inner join "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."LOCATIONS" as L
 on R.location = L.location 
@@ -17,6 +23,7 @@ with raw_table as (
             total_active_cases,
             new_cases,
             new_recovered,
+            total_recovered,
             total_deaths,
             location,
             location_iso_code,
@@ -26,13 +33,10 @@ with raw_table as (
     from "FIVETRAN_INTERVIEW_DB"."GOOGLE_SHEETS"."COVID_19_INDONESIA_TANMAY_KULKARNI"
 ),
 
-denormalised_table as (
+normalised_table as (
     select location_id, location, location_iso_code, country, island,province
     from {{ ref('locations') }}
 )
 
 select *
-from raw_table inner join denormalised_table using(location, location_iso_code, country, island,province)
-
-
--- select * from denormalised_table
+from raw_table inner join normalised_table using(location, location_iso_code, country, island,province)

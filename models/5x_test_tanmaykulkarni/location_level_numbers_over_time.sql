@@ -1,9 +1,13 @@
 /*
 
-select Date, Location, country, continent, province , sum(total_cases), sum(New_CASES), sum(new_deaths), sum(total_recovered), sum(total_active_cases)
-from "FIVETRAN_INTERVIEW_DB"."GOOGLE_SHEETS"."COVID_19_INDONESIA_TANMAY_KULKARNI"
-group by Date, Location, country, continent, province
-order by Date asc;
+This model groups the numbers by geography directly. i.e. it doesn't use the normalized tables from the other models.
+
+It's basically equivalent to the following SQL query
+
+        select Date, Location, country, continent, province , sum(total_cases), sum(New_CASES), sum(new_deaths), sum(total_recovered), sum(total_active_cases)
+        from "FIVETRAN_INTERVIEW_DB"."GOOGLE_SHEETS"."COVID_19_INDONESIA_TANMAY_KULKARNI"
+        group by Date, Location, country, continent, province
+        order by Date asc;
 
 */
 

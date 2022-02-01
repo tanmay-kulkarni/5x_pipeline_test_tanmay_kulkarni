@@ -10,6 +10,8 @@ My dbt code for the 6 hour pipeline test taken on Feb 1, 2022
         
     - locations [Normalised geography data from the original raw table]
 
+        * `select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."LOCATIONS";`
+
     - cases_with_time [Normalised time series data that links with "locations" via location_id (new field) ]
         
     - location_level_numbers_over_time [Calculates aggregate numbers from the raw data]

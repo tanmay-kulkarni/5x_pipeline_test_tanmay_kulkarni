@@ -1,3 +1,14 @@
+/*
+        This model combines the Latitude and Longitude fields from the original dataset,
+        and creates a new field called "coordinates".
+
+        It also calculates the ratios of total cases to population,
+        and total deaths to population.
+
+        This model will help me create a geographical map.
+*/
+
+
 {{config(materialized='table')}}
 
 

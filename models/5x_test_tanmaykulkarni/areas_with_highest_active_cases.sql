@@ -1,3 +1,12 @@
+/*
+
+    This model creates a table of the top locations having the highest NEW covid-19 cases.
+    It joins the denormalized "locations" and "cases_with_time" tables,
+    to obtain the final result
+
+*/
+
+
 {{config(materialized='table')}}
 
 select DATE, 

@@ -1,3 +1,11 @@
+/*
+
+    This model creates a separate table of only the "NEW" metrics from the original dataset.
+    It joins the denormalized "locations" and "cases_with_time" tables,
+    to obtain the final result
+
+*/
+
 {{config(materialized='table')}}
 
 WITH new_metrics AS (

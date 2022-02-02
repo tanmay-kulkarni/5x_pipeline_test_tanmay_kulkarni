@@ -39,7 +39,7 @@ My dbt code for the 6 hour pipeline test taken on Feb 1, 2022
 
        select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."AREAS_WITH_HIGHEST_ACTIVE_CASES";
 
-4. **Connected Google Data Studio with Snowflake using the Supermetrics connector (I later faced some connection issues with Supermetrics, so I then decided to export my models from Snowflake as CSV and used them as data soruces in GDS)**
+4. **Connected Google Data Studio with Snowflake using the Supermetrics connector (I later faced some connection issues with Supermetrics, so I then decided to export my models from Snowflake as CSV and used them as data sources in GDS)**
         ![image](https://user-images.githubusercontent.com/8901293/152094292-44eda47f-d2e0-42fe-bf2f-68faa89d7d32.png)
         ![image](https://user-images.githubusercontent.com/8901293/152095738-be99de7d-bbac-4cd5-9685-3c61c26e131c.png)
 

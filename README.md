@@ -16,17 +16,21 @@ My dbt code for the 6 hour pipeline test taken on Feb 1, 2022
 
         * `select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."CASES_WITH_TIME";`
         
-    - location_level_numbers_over_time (**Calculates aggregate numbers from the raw data**)
+    - new_metrics (**Generates NEW case data from the normalised tables "locations" and "cases_with_time"**)
 
-        * `select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."LOCATION_LEVEL_NUMBERS_OVER_TIME";`
+        * `select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."NEW_METRICS";`
         
-    - numbers_by_geography_over_time_aggregated (**Same as above, but uses normalised tables from #1 and #2**)
+    - total_metrics (**Generates TOTAL case data from the normalised tables "locations" and "cases_with_time**)
 
-        * `select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."NUMBERS_BY_GEOGRAPHY_OVER_TIME_AGGREGATED";`
+        * `select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."TOTAL_METRICS";`
         
-    - numbers_by_geography_over_time_series (**Gives the original table joined on #1 and #2 without aggregations**)
+    - ratios_by_geolocation (**Generates derived fields "coordinates" and case ratios from the RAW table**)
 
-        * `select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."NUMBERS_BY_GEOGRAPHY_OVER_TIME_SERIES";`
+        * `select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."RATIOS_BY_GEOLOCATION";`
+
+    - areas_with_highest_active_cases (**Generates a table of the top locations having the highest NEW covid-19 cases**)
+
+        * `select * from "INTERVIEW_DB"."PLAYGROUND_TANMAY_KULKARNI"."AREAS_WITH_HIGHEST_ACTIVE_CASES";`
 
 4. Connected Google Data Studio with Snowflake using the Supermetrics connector
 5. Created a basic dashboard using the above data

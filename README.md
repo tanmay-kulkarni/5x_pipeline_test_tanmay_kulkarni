@@ -1,5 +1,11 @@
-# 5x_pipeline_test_tanmay_kulkarni
-My dbt code for the 6 hour pipeline test taken on Feb 1, 2022
+# A simple data dashboard pipeline
+
+Following are the main technologies used in this data pipeline:
+
+	1. Snowflake Warehouse
+	2. Fivetran
+	3. dbt (Data build tool)
+	4. Google Data Studio
 
 ## Goals Achieved:
 
